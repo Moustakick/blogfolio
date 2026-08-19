@@ -1,0 +1,48 @@
+<div class="hero-illustration" aria-hidden="true">
+  <svg viewBox="0 0 560 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration">
+    <defs>
+      <linearGradient id="robeGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--navy-light)"/>
+        <stop offset="100%" stop-color="var(--navy)"/>
+      </linearGradient>
+    </defs>
+
+    <!-- ground shadow -->
+    <ellipse cx="280" cy="610" rx="150" ry="18" fill="var(--navy)" opacity="0.12"/>
+
+    <!-- robe -->
+    <path d="M180 560 C150 420 165 300 210 230 L235 190 L325 190 L350 230 C395 300 410 420 380 560 Z" fill="url(#robeGrad)"/>
+    <path d="M240 560 L250 260 M320 560 L310 260" stroke="var(--paper)" stroke-opacity="0.15" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- head -->
+    <circle cx="280" cy="150" r="52" fill="var(--paper)"/>
+    <path d="M244 150 q36 -20 72 0" stroke="var(--navy)" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+    <!-- hat -->
+    <path d="M212 128 C230 40 330 40 348 128 C312 112 248 112 212 128 Z" fill="var(--navy-light)"/>
+    <circle cx="280" cy="52" r="10" fill="var(--yellow)"/>
+
+    <!-- raised arm conjuring the cube -->
+    <path d="M330 260 C400 220 430 150 420 90" stroke="var(--navy)" stroke-width="34" stroke-linecap="round" fill="none"/>
+    <circle cx="420" cy="90" r="20" fill="var(--paper)"/>
+
+    <!-- other arm -->
+    <path d="M230 270 C170 300 140 350 150 410" stroke="var(--navy)" stroke-width="30" stroke-linecap="round" fill="none"/>
+    <circle cx="150" cy="410" r="18" fill="var(--paper)"/>
+
+    <!-- conjured wireframe cube -->
+    <g class="conjured-cube" stroke="var(--navy)" stroke-width="3" fill="none" stroke-linejoin="round">
+      <polygon points="420,10 460,26 460,66 420,50" fill="var(--yellow)" fill-opacity="0.9"/>
+      <polygon points="420,10 380,26 380,66 420,50" fill="var(--yellow)" fill-opacity="0.65"/>
+      <polygon points="380,26 420,42 460,26 420,10" fill="var(--yellow)" fill-opacity="0.95"/>
+      <line x1="420" y1="50" x2="420" y2="42"/>
+    </g>
+
+    <!-- sparkles -->
+    <g class="sparkles" fill="var(--navy)">
+      <path class="sparkle sparkle--1" d="M470 130 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4 z"/>
+      <path class="sparkle sparkle--2" d="M110 200 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3 z"/>
+      <path class="sparkle sparkle--3" d="M370 140 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3 z"/>
+    </g>
+  </svg>
+</div>

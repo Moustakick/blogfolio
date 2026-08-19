@@ -1,0 +1,18 @@
+{% assign project = include.project %}
+<a class="project-card" href="{{ project.url | relative_url }}" data-category="{{ project.category | slugify }}">
+  {% if project.image %}
+    <div class="project-card__media" style="background-image:url('{{ project.image | relative_url }}')"></div>
+  {% else %}
+    <div class="project-card__media project-card__media--placeholder"></div>
+  {% endif %}
+  <div class="project-card__body">
+    {% if project.category %}<span class="project-card__category">{{ project.category }}</span>{% endif %}
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.excerpt | default: project.summary | strip_html | truncate: 110 }}</p>
+    {% if project.tags %}
+      <ul class="project-card__tags">
+        {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</a>

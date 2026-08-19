@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post wrap wrap--narrow">
+  <header class="post__header">
+    <p class="post__date">{{ page.role | default: "Portfolio" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.tags %}
+      <ul class="post__tags">
+        {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </header>
+  {% if page.image %}
+    <div class="post__media" style="background-image:url('{{ page.image | relative_url }}')"></div>
+  {% endif %}
+  <div class="post__content">
+    {{ content }}
+  </div>
+  <p class="post__back"><a href="{{ '/' | relative_url }}#portfolio">&larr; Retour au portfolio</a></p>
+</article>

@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Blog"
+---
+<section class="wrap wrap--narrow page-header">
+  <h1>Blog</h1>
+</section>
+<section class="wrap wrap--narrow page-content">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post-list__item">
+        <a href="{{ post.url | relative_url }}">
+          <span class="post-list__date">{{ post.date | date: "%d %b %Y" }}</span>
+          <span class="post-list__title">{{ post.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

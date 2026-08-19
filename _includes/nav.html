@@ -1,0 +1,13 @@
+<header class="site-nav">
+  <div class="wrap site-nav__inner">
+    <a class="site-nav__brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav__links" aria-label="Navigation principale">
+      {% for item in site.nav %}
+        <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
+    <button class="site-nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

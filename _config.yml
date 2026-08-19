@@ -1,0 +1,130 @@
+title: "Mes trucs"
+description: >-
+  Un site pour ranger le bazar : robotique, 3D, jeux de rôle et
+  autres mondes où les gens prennent de très mauvaises décisions.
+baseurl: ""
+url: ""
+
+# ---------------------------------------------------------------
+# Contenu de la page d'accueil, modifiez librement
+# ---------------------------------------------------------------
+author:
+  name: "Maxime O."
+  role: "Informaticien, roboticien, chercheur R&D, et un peu sorcier"
+  photo: "/assets/images/cat_wiz.jpg"
+
+hero:
+  eyebrow: "Mes trucs"
+  title_line1: "Salut, moi c'est"
+  title_name: "Maxime O."
+  image: "/assets/images/cat_wiz.jpg"
+  image_alt: "Portrait de Maxime O."
+  paragraphs:
+    - "Je passe une partie de mon temps à essayer de comprendre comment les machines voient le monde."
+    - "L'autre partie, je la consacre à inventer des mondes dans lesquels des gens prennent de très mauvaises décisions."
+    - "Et, accessoirement, je travaille dans la robotique en recherche et développement."
+  small_paragraphs:
+    - "Le site est là pour ranger tout ce bazar."
+    - "Ou au moins essayer."
+  cta_text: "Si jamais vous voulez me parler"
+  cta_url: "https://www.linkedin.com/in/maxime-o%C3%A7afrain-576ab4186/"
+
+nav:
+  - name: "Projets"
+    url: "/projets/"
+  - name: "Blog"
+    url: "/blog/"
+  - name: "À propos"
+    url: "/about/"
+
+intro:
+  title: "Alors, concrètement, je fais quoi ?"
+  paragraph: >-
+    Je suis informaticien, roboticien et chercheur R&D, avec un goût
+    prononcé pour tout ce qui permet de capturer, représenter et
+    comprendre le monde en trois dimensions. Nuages de points,
+    dispositifs d'acquisition 3D, reconstruction, perception… Des
+    choses sérieuses donc…
+  small_paragraph: "Enfin, la plupart du temps."
+  paragraph2: >-
+    Parce qu'en dehors du travail, je suis maître de jeu, amateur
+    invétéré de jeux de société et collectionneur de projets qui
+    commencent souvent par une idée qui jaillit de nul part, très
+    pratique pour inventer de nouvelle chose que ça soit
+    professionnellement ou personnellement, vachement moins pour mon
+    temps libre.
+  columns:
+    - title: "La 3D"
+      text: >-
+        Mon métier consiste notamment à faire parler des capteurs et
+        à transformer des morceaux du monde réel en données
+        exploitables.
+    - title: "Le jeu de rôle"
+      text: >-
+        Je raconte des histoires interactives à des gens qui ont la
+        fâcheuse tendance à prendre des décisions auxquelles je
+        n'avais absolument pas pensé et c'est ça qui est drôle.
+
+portfolio:
+  title: "Un semblant de portfolio"
+  subtitle: "Quelques trucs que j'ai fait et dont je ne suis pas trop peu fier."
+  count_on_home: 3
+  see_all_text: "Voir tous les projets"
+  see_all_url: "/projets/"
+
+# Catégories principales des projets, dans l'ordre d'affichage des
+# onglets sur la page /projets/. "slug" sert d'identifiant pour le
+# filtre JS et doit être en minuscules, sans accent ni espace.
+project_categories:
+  - name: "JDR"
+    slug: "jdr"
+  - name: "Recherche/Informatique"
+    slug: "recherche-informatique"
+  - name: "Hobby"
+    slug: "hobby"
+
+blog_preview:
+  title: "Sur le blog récemment"
+  count: 5
+  see_all_text: "Tous les articles"
+  see_all_url: "/blog/"
+
+footer:
+  text: "Fait avec amour et surtout jekyll."
+
+social:
+  linkedin_url: "https://www.linkedin.com/in/maxime-o%C3%A7afrain-576ab4186/"
+  github_url: "https://github.com/Moustakick"
+
+# ---------------------------------------------------------------
+# Collections
+# ---------------------------------------------------------------
+collections:
+  projects:
+    output: true
+    permalink: /portfolio/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+markdown: kramdown
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
