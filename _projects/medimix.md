@@ -23,6 +23,6 @@ Le résultat final est une solution permettant de visualiser, transmettre et man
 
 Source : Non disponible.
 
-![Visualisation du lien PC -> AR](assets/images/projects/medimix/link.png)
+![Visualisation du lien PC -> AR]({{ "assets/images/projects/medimix/link.png" | relative_url }})
 
 *Exemple de visualisation de la projection AR  du logiciel 3D Slicer vers notre solution*

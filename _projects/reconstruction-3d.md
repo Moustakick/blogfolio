@@ -17,7 +17,7 @@ Le projet prenait la forme d’une preuve de concept : expérimenter, comparer d
 
 Source : [https://github.com/Moustakick/Depth-Map-POC](https://github.com/Moustakick/Depth-Map-POC)
 
-![Visualisation d'une carte de profondeur](assets/images/projects/depth_map_poc/totoro_contours.png)
+![Visualisation d'une carte de profondeur]({{ "/assets/images/projects/depth_map_poc/totoro_contours.png" | relative_url }})
 
 *Exemple de visualisation / résultat obtenu dans le cadre du projet.*
 
