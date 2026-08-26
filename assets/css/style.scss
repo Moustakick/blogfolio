@@ -158,6 +158,13 @@ button:focus-visible {
 .hero__media { position: relative; }
 .hero-illustration svg { width: 100%; height: auto; }
 
+.hero__photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
 .conjured-cube { transform-origin: 420px 40px; animation: float 4s ease-in-out infinite; }
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -396,7 +403,86 @@ button:focus-visible {
    ========================================================== */
 .page-content { padding-bottom: 80px; }
 
-.post { padding-top: 56px; padding-bottom: 90px; }
+/* Article/projet + table des matières flottante.
+   Le contenu garde exactement le même centrage que les pages
+   "wrap wrap--narrow" (À propos, Blog) : 720px, centré sur la page
+   entière. Le sommaire ne modifie jamais ce centrage — il flotte
+   dans la marge à droite sur grand écran, ou se place au-dessus du
+   texte en bloc classique sur écran plus étroit. */
+.post-layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 56px;
+  padding-bottom: 90px;
+}
+.post-main { min-width: 0; }
+
+.post-toc-wrap { order: -1; margin-bottom: 28px; }
+
+.post-toc {
+  border: 1px solid rgba(37,52,73,0.15);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.post-toc__label {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--navy);
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+}
+.post-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.post-toc__list a {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.post-toc__list a:hover { color: var(--navy); }
+.post-toc__list a.is-active {
+  color: var(--navy);
+  border-color: var(--navy);
+  font-weight: 600;
+}
+.post-toc__list--sub { margin-left: 14px; margin-top: 4px; }
+
+/* À partir de 1300px de large, on a assez de marge de chaque côté
+   du texte (720px, centré) pour y faire flotter le sommaire sans
+   jamais toucher au centrage du texte lui-même. */
+@media (min-width: 1300px) {
+  .post-layout { display: block; }
+  .post-toc-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    margin-left: 48px;
+    margin-bottom: 0;
+    width: 220px;
+  }
+  .post-toc {
+    position: sticky;
+    top: 100px;
+    border: none;
+    border-left: 2px solid rgba(37,52,73,0.12);
+    border-radius: 0;
+    padding: 0 0 0 18px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+  }
+}
 .post__date { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 0.4em; }
 .post__header h1 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
 .post__tags {
