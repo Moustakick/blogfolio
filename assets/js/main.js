@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var tocList = document.getElementById("post-toc-list");
   if (!contentEl || !toc || !tocList) return;
 
-  var headings = contentEl.querySelectorAll("h2, h3");
+  var headings = contentEl.querySelectorAll("h1, h2, h3");
   if (headings.length < 2) return; // pas la peine d'afficher un sommaire pour 0 ou 1 titre
 
   var usedIds = {};
@@ -83,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var a = document.createElement("a");
     a.href = "#" + heading.id;
     a.textContent = heading.textContent;
-    if (heading.tagName === "H3") li.className = "post-toc__list--sub";
+    if (heading.tagName === "H2") li.className = "post-toc__list--sub";
+    if (heading.tagName === "H3") li.className = "post-toc__list--subsub";
     li.appendChild(a);
     tocList.appendChild(li);
     links.push({ id: heading.id, link: a });

@@ -457,6 +457,7 @@ button:focus-visible {
   font-weight: 600;
 }
 .post-toc__list--sub { margin-left: 14px; margin-top: 4px; }
+.post-toc__list--subsub { margin-left: 28px; margin-top: 4px; }
 
 /* À partir de 1300px de large, on a assez de marge de chaque côté
    du texte (720px, centré) pour y faire flotter le sommaire sans
@@ -500,6 +501,24 @@ button:focus-visible {
   padding: 4px 10px;
   border-radius: 999px;
 }
+.post__license {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(37,52,73,0.12);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.post__license svg { flex-shrink: 0; opacity: 0.8; margin-top: 3px; }
+.post__license a {
+  color: var(--navy-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.post__license a:hover { color: var(--navy); }
 .post__media {
   margin: 32px 0;
   aspect-ratio: 16/9;
@@ -510,6 +529,38 @@ button:focus-visible {
 }
 .post__content { margin-top: 32px; font-size: 1.02rem; }
 .post__content p { margin: 0 0 1.2em; }
+
+/* Tableaux Markdown */
+.post__content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.6em;
+  font-size: 0.95rem;
+  border: 1px solid rgba(37,52,73,0.15);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.post__content thead th {
+  background: var(--navy);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  text-align: left;
+  padding: 12px 18px;
+}
+.post__content td {
+  padding: 12px 18px;
+  border-top: 1px solid rgba(37,52,73,0.12);
+}
+.post__content tbody tr:nth-child(even) { background: var(--cream); }
+.post__content tbody tr:hover { background: rgba(37,52,73,0.06); }
+
+/* Sur petit écran, on autorise un défilement horizontal plutôt que
+   de casser la mise en page si le tableau est large. */
+@media (max-width: 640px) {
+  .post__content table { display: block; overflow-x: auto; white-space: nowrap; }
+}
 .post__back { margin-top: 40px; font-weight: 600; }
 
 .post-list { list-style: none; margin: 0; padding: 0; }

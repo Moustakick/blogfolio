@@ -3,6 +3,9 @@ title: "Les Mémoires de l'Arcaniste"
 role: "Maître de jeu"
 category: "JDR"
 summary: "Un document révélant la mythologie oubliée et le sombre secret qui maintient la paix au cœur d'une cité entière."
+author: "Maxime \"Moustakick\" Oçafrain"
+license: "CC BY 4.0"
+license_url: "https://creativecommons.org/licenses/by/4.0/deed.fr"
 tags: [JDR, Narrative Design, Lore, Worldbuilding]
 image: "assets/images/chill_wiz.png"
 ---
