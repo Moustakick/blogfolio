@@ -58,7 +58,7 @@ layout: default
     </div>
 
     <div class="portfolio__grid">
-      {% assign home_projects = site.projects | where_exp: "project", "s.categories contains project.category" | sort: 'date' | reverse %}
+      {% assign home_projects = site.projects | where_exp: "project", "s.categories contains project.category or project.sides contains page.side" | sort: 'date' | reverse %}
       {% if s.portfolio.count_on_home %}
         {% assign home_projects = home_projects | slice: 0, s.portfolio.count_on_home %}
       {% endif %}

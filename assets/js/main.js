@@ -47,6 +47,38 @@ document.addEventListener("DOMContentLoaded", function () {
     applyFilter(hasMatchingTab ? initialFilter : "all");
   }
 
+  // ---- Petites cartes GitHub (stats en direct via l'API) ----
+  var githubEmbeds = document.querySelectorAll(".github-embed[data-repo]");
+  githubEmbeds.forEach(function (card) {
+    var repo = card.getAttribute("data-repo");
+    var descEl = card.querySelector("[data-github-desc]");
+    var statsEl = card.querySelector("[data-github-stats]");
+    var starsEl = card.querySelector("[data-github-stars] span");
+    var forksEl = card.querySelector("[data-github-forks] span");
+    var updatedEl = card.querySelector("[data-github-updated] span");
+
+    fetch("https://api.github.com/repos/" + repo)
+      .then(function (res) {
+        if (!res.ok) throw new Error("Réponse GitHub invalide");
+        return res.json();
+      })
+      .then(function (data) {
+        if (descEl) descEl.textContent = data.description || "Voir le dépôt sur GitHub.";
+        if (starsEl) starsEl.textContent = data.stargazers_count;
+        if (forksEl) forksEl.textContent = data.forks_count;
+        if (updatedEl && data.pushed_at) {
+          var updated = new Date(data.pushed_at);
+          updatedEl.textContent = updated.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+        }
+        if (statsEl) statsEl.hidden = false;
+      })
+      .catch(function () {
+        // Hors ligne, dépôt privé ou limite de l'API GitHub atteinte :
+        // on retombe simplement sur un lien silencieux vers le dépôt.
+        if (descEl) descEl.textContent = "Voir le dépôt sur GitHub.";
+      });
+  });
+
   // ---- Petit clin d'œil automatique sur le lien pro / perso ----
   // Rejoue l'effet de bascule tout seul, sans que le visiteur ait
   // besoin de survoler le lien, pour attirer l'attention dessus.

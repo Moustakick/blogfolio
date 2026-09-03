@@ -1,0 +1,29 @@
+{% comment %}
+  Petite carte d'intégration GitHub : affiche le nom du dépôt, sa
+  description, et ses stats (étoiles, forks, dernière mise à jour)
+  récupérées en direct via l'API GitHub au chargement de la page.
+  Usage : {% include github-embed.html repo="owner/repo" %}
+{% endcomment %}
+<div class="github-embed" data-repo="{{ include.repo }}">
+  <a class="github-embed__header" href="https://github.com/{{ include.repo }}" target="_blank" rel="noopener">
+    <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+    <span class="github-embed__name">{{ include.repo }}</span>
+  </a>
+  <p class="github-embed__desc" data-github-desc>Chargement des informations du dépôt…</p>
+  <div class="github-embed__stats" data-github-stats hidden>
+    <span class="github-embed__stat" data-github-stars>
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
+      <span></span>
+    </span>
+    <span class="github-embed__stat" data-github-forks>
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm0 2.122a2.25 2.25 0 1 0-1.5 0v.878A2.25 2.25 0 0 0 5.75 8.5h1.5v2.128a2.251 2.251 0 1 0 1.5 0V8.5h1.5a2.25 2.25 0 0 0 2.25-2.25v-.878a2.25 2.25 0 1 0-1.5 0v.878a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-.878zm3.75 7.378a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zM12 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0z"/></svg>
+      <span></span>
+    </span>
+    <span class="github-embed__stat" data-github-updated>
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0zm7-3.25v2.992l2.28 1.368a.75.75 0 1 1-.76 1.29L7.5 8.75A.75.75 0 0 1 7 8V4.75a.75.75 0 0 1 1.5 0z"/></svg>
+      <span></span>
+    </span>
+  </div>
+</div>
