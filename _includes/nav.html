@@ -5,6 +5,21 @@
       {% for item in site.nav %}
         <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
       {% endfor %}
+      {% if page.side == 'perso' %}
+        <a class="nav-flip nav-flip--to-pro" href="{{ '/' | relative_url }}">
+          <span class="nav-flip__inner">
+            <span class="nav-flip__line">Côté pro</span>
+            <span class="nav-flip__line nav-flip__line--alt">Côté pro</span>
+          </span>
+        </a>
+      {% else %}
+        <a class="nav-flip nav-flip--to-perso" href="{{ '/perso/' | relative_url }}">
+          <span class="nav-flip__inner">
+            <span class="nav-flip__line">Côté perso</span>
+            <span class="nav-flip__line nav-flip__line--alt">Côté perso</span>
+          </span>
+        </a>
+      {% endif %}
     </nav>
     <button class="site-nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>

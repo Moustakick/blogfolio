@@ -5,29 +5,10 @@ description: >-
 baseurl: ""
 url: ""
 
-# ---------------------------------------------------------------
-# Contenu de la page d'accueil, modifiez librement
-# ---------------------------------------------------------------
 author:
   name: "Maxime O."
   role: "Informaticien, roboticien, chercheur R&D, et un peu sorcier"
   photo: "/assets/images/cat_wiz.jpg"
-
-hero:
-  eyebrow: "Mes trucs"
-  title_line1: "Bienvenue"
-  title_name: "chez moi"
-  image: "/assets/images/cat_wiz.jpg"
-  image_alt: "Portrait de Maxime O."
-  paragraphs:
-    - "Je passe une partie de mon temps à essayer de comprendre comment les machines voient le monde."
-    - "L'autre partie, je la consacre à inventer des mondes dans lesquels des gens prennent de très mauvaises décisions."
-    - "Et, accessoirement, je travaille dans la robotique en recherche et développement."
-  small_paragraphs:
-    - "Le site est là pour ranger tout ce bazar."
-    - "Ou au moins essayer."
-  cta_text: "Si jamais vous voulez me parler"
-  cta_url: "https://www.linkedin.com/in/maxime-o%C3%A7afrain-576ab4186/"
 
 nav:
   - name: "Projets"
@@ -37,40 +18,126 @@ nav:
   - name: "À propos"
     url: "/about/"
 
-intro:
-  title: "Alors, concrètement, je fais quoi ?"
-  paragraph: >-
-    Je suis informaticien, roboticien et chercheur R&D, avec un goût
-    prononcé pour tout ce qui permet de capturer, représenter et
-    comprendre le monde en trois dimensions. Nuages de points,
-    dispositifs d'acquisition 3D, reconstruction, perception… Des
-    choses sérieuses donc…
-  small_paragraph: "Enfin, la plupart du temps."
-  paragraph2: >-
-    Parce qu'en dehors du travail, je suis maître de jeu, amateur
-    invétéré de jeux de société et collectionneur de projets qui
-    commencent souvent par une idée qui jaillit de nulle part, très
-    pratique pour inventer de nouvelle chose que ça soit
-    professionnellement ou personnellement, vachement moins pour mon
-    temps libre.
-  columns:
-    - title: "La 3D"
-      text: >-
-        Mon métier consiste notamment à faire parler des capteurs et
-        à transformer des morceaux du monde réel en données
-        exploitables.
-    - title: "Le jeu de rôle"
-      text: >-
-        Je raconte des histoires interactives à des gens qui ont la
-        fâcheuse tendance à prendre des décisions auxquelles je
-        n'avais absolument pas pensé et c'est ça qui est drôle.
+# ---------------------------------------------------------------
+# Deux versions de la page d'accueil : "pro" (celle par défaut,
+# uniquement le travail technique) et "perso" (le côté beaucoup
+# plus whimsical, accessible via le bouton de bascule dans le
+# menu). Chacune a son propre hero, son propre texte de
+# présentation et sa propre liste de catégories de projets à
+# afficher. "categories" doit correspondre aux valeurs utilisées
+# dans le champ "category" des projets et articles.
+# ---------------------------------------------------------------
+sides:
+  pro:
+    categories: ["Recherche/Informatique"]
+    hero:
+      eyebrow: "Mes trucs"
+      title_line1: "Maxime Oçafrain."
+      # title_name: "Oçafrain."
+      image: "/assets/images/me_squared.png"
+      image_alt: "Portrait de Maxime O."
+      paragraphs:
+        - "Je passe une partie de mon temps à essayer de comprendre comment les machines voient le monde."
+        - "Nuages de points, dispositifs d'acquisition 2D et 3D, reconstruction de maillage et d'environnement, perception, traitement des données 2D et 3D."
+        - "Et sinon, actuellement, je travaille depuis 2024 dans la robotique, en recherche et développement."
+      small_paragraphs:
+        - "Ce site organise une partie de mes projets présentables publiquement."
+        - "Une autre partie me permet de parler et de présenter mes projets autour de mes hobbies."
+      cta_text: "Pour me contacter"
+      cta_url: "https://www.linkedin.com/in/maxime-o%C3%A7afrain-576ab4186/"
+    intro:
+      title: "Alors, concrètement, je fais quoi ?"
+      paragraph: >-
+        Je suis informaticien, roboticien et chercheur R&D, avec un goût
+        prononcé pour tout ce qui permet de capturer, représenter et
+        comprendre le monde en trois dimensions. Que ce soit dans les
+        solutions ou applications liées à la synthèse d'image 3D ou dans les
+        caméras qui permettent d'acquérir et de représenter le monde réel
+        au travers de nuages de points.
+      # small_paragraph: "Enfin, la plupart du temps."
+      paragraph2: >-
+        Mon travail actuel tourne autour de la capture et du traitement de
+        données 3D liées à des applications en robotique collaborative. Que ça soit
+        pour la sécurité des opérateurs, reconstruire une surface pour des applications
+        industrielles ou bien permettre au robot de mieux percevoir et
+        comprendre son environnement afin d'adapter son comportement et ses trajectoires
+        en conséquence.
+      columns:
+        - title: "La 3D"
+          text: >-
+            Mon métier consiste notamment à faire parler des capteurs et 
+            à transformer des morceaux du monde réel en données exploitables. 
+            De la capture à l'interprétation, j'aime exploiter ces données
+            pour répondre à des problématiques concrètes.
+        - title: "La recherche"
+          text: >-
+            Explorer, tester, se planter, recommencer. La recherche est un travail
+            aussi passionnant que frustrant mais dont le processus est toujours satisfaisant.
+            La complémentarité des différents aspects du métier me passionne : recherche bibliographique,
+            application, benchmark, et rédaction.
+    portfolio:
+      title: "Un semblant de portfolio"
+      subtitle: "Quelques projets techniques présentables publiquement, dont je ne suis pas peu fier."
+      count_on_home: 3
+      see_all_text: "Voir tous les projets"
+      see_all_url: "/projets/#recherche-informatique"
+    # blog_preview:
+    #   title: "Sur le blog récemment"
+    #   count: 5
+    #   see_all_text: "Tous les articles"
+    #   see_all_url: "/blog/"
 
-portfolio:
-  title: "Un semblant de portfolio"
-  subtitle: "Quelques trucs que j'ai fait et dont je ne suis pas trop peu fier."
-  count_on_home: 3
-  see_all_text: "Voir tous les projets"
-  see_all_url: "/projets/"
+  perso:
+    categories: ["JDR", "Hobby"]
+    hero:
+      eyebrow: "Mes trucs (le bazar)"
+      title_line1: "Et sinon,"
+      title_name: "à côté de ça"
+      image: "/assets/images/cat_wiz.jpg"
+      image_alt: "Un sorcier détendu"
+      paragraphs:
+        - "L'autre partie de mon temps, je la consacre à inventer des mondes dans lesquels des gens prennent de très mauvaises décisions."
+        - "Maître de jeu de rôle sur table (ou en ligne), amateur invétéré de jeux de société et collectionneur de projets qui commencent souvent par une idée qui jaillit de nulle part."
+        - "Très pratique pour faire parler la créativité, vachement moins pour mon temps libre."
+      small_paragraphs:
+        - "Ici, c'est le côté un peu plus perso du site, rien de bien professionnel."
+        - "Vous êtes prévenus."
+      cta_text: "Besoin de me parler ?"
+      cta_url: "https://www.linkedin.com/in/maxime-o%C3%A7afrain-576ab4186/"
+    intro:
+      title: "Alors, concrètement, ça donne quoi ?"
+      paragraph: >-
+        Je raconte des histoires interactives à des gens qui ont la
+        fâcheuse tendance à prendre des décisions auxquelles je n'avais
+        absolument pas pensé. C'est ça qui est drôle.
+      small_paragraph: "La créativité au travers de la préparation, de l'improvisation et de l'organisation."
+      paragraph2: >-
+        Entre les campagnes, les systèmes de règles maison et les idées de dev,
+        il y a toujours un projet en cours quelque part.
+      columns:
+        - title: "Le jeu de rôle"
+          text: >-
+            Créer des mondes, des règles, des scénarios, et surtout
+            regarder les joueurs les détourner avec enthousiasme.
+        - title: "Le jeu de société"
+          text: >-
+            Social, réflexion, tactique : que ce soit dans le jeu, l'analyse
+            ou la création.
+        - title: "Développement"
+          text: >-
+            Développement d'application, de jeu vidéo, web,
+            une façon assez concrète d'exprimer une idée au travers de mes compétences pro.
+    portfolio:
+      title: "Le bazar créatif"
+      subtitle: "Campagnes, systèmes de jeu et autres projets nés d'une idée de nulle part."
+      count_on_home: 3
+      see_all_text: "Voir tout le bazar"
+      see_all_url: "/projets/#jdr"
+    blog_preview:
+      title: "Sur le blog récemment"
+      count: 5
+      see_all_text: "Tous les articles"
+      see_all_url: "/blog/"
 
 # Catégories principales des projets, dans l'ordre d'affichage des
 # onglets sur la page /projets/. "slug" sert d'identifiant pour le
@@ -82,12 +149,6 @@ project_categories:
     slug: "recherche-informatique"
   - name: "Hobby"
     slug: "hobby"
-
-blog_preview:
-  title: "Sur le blog récemment"
-  count: 5
-  see_all_text: "Tous les articles"
-  see_all_url: "/blog/"
 
 footer:
   text: "Fait avec amour et surtout jekyll."

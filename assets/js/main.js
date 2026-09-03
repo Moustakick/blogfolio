@@ -47,6 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
     applyFilter(hasMatchingTab ? initialFilter : "all");
   }
 
+  // ---- Petit clin d'œil automatique sur le lien pro / perso ----
+  // Rejoue l'effet de bascule tout seul, sans que le visiteur ait
+  // besoin de survoler le lien, pour attirer l'attention dessus.
+  var flipLink = document.querySelector(".nav-flip");
+  if (flipLink) {
+    var flipStopped = false;
+    flipLink.addEventListener("mouseenter", function () {
+      flipStopped = true;
+    }, { once: true });
+
+    var playAutoFlip = function () {
+      if (flipStopped) return;
+      flipLink.classList.add("nav-flip--auto");
+      window.setTimeout(function () {
+        flipLink.classList.remove("nav-flip--auto");
+      }, 900);
+    };
+
+    window.setTimeout(function () {
+      playAutoFlip();
+      var autoFlipInterval = window.setInterval(function () {
+        if (flipStopped) {
+          window.clearInterval(autoFlipInterval);
+          return;
+        }
+        playAutoFlip();
+      }, 14000);
+    }, 2500);
+  }
+
   // ---- Table des matières flottante des articles / projets ----
   var contentEl = document.getElementById("post-content");
   var toc = document.getElementById("post-toc");

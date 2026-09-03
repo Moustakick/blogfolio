@@ -1,24 +1,25 @@
 ---
 layout: default
 ---
+{% assign s = site.sides[page.side] %}
 <section class="hero">
   <div class="wrap hero__inner">
     <div class="hero__media">
-      {% if site.hero.image %}
-        <img class="hero__photo" src="{{ site.hero.image | relative_url }}" alt="{{ site.hero.image_alt | default: site.author.name }}">
+      {% if s.hero.image %}
+        <img class="hero__photo" src="{{ s.hero.image | relative_url }}" alt="{{ s.hero.image_alt | default: site.author.name }}">
       {% else %}
         {% include hero-illustration.html %}
       {% endif %}
     </div>
     <div class="hero__content">
-      <h1 class="hero__title">{{ site.hero.title_line1 }}<br>{{ site.hero.title_name }}</h1>
-      {% for p in site.hero.paragraphs %}
+      <h1 class="hero__title">{{ s.hero.title_line1 }}<br>{{ s.hero.title_name }}</h1>
+      {% for p in s.hero.paragraphs %}
         <p class="hero__lead">{{ p }}</p>
       {% endfor %}
-      {% for p in site.hero.small_paragraphs %}
+      {% for p in s.hero.small_paragraphs %}
         <p class="hero__small">{{ p }}</p>
       {% endfor %}
-      <a class="button" href="{{ site.hero.cta_url }}">{{ site.hero.cta_text }}</a>
+      <a class="button" href="{{ s.hero.cta_url }}">{{ s.hero.cta_text }}</a>
     </div>
   </div>
 </section>
@@ -26,13 +27,13 @@ layout: default
 <section class="intro">
   <div class="wrap">
     <div class="intro__grid">
-      <h2 class="intro__title">{{ site.intro.title }}</h2>
+      <h2 class="intro__title">{{ s.intro.title }}</h2>
       <div class="intro__body">
-        <p>{{ site.intro.paragraph }}</p>
-        <p class="intro__small">{{ site.intro.small_paragraph }}</p>
-        <p>{{ site.intro.paragraph2 }}</p>
+        <p>{{ s.intro.paragraph }}</p>
+        <p class="intro__small">{{ s.intro.small_paragraph }}</p>
+        <p>{{ s.intro.paragraph2 }}</p>
         <div class="intro__columns">
-          {% for col in site.intro.columns %}
+          {% for col in s.intro.columns %}
             <div class="intro__column">
               <h3>{{ col.title }}</h3>
               <p>{{ col.text }}</p>
@@ -48,18 +49,18 @@ layout: default
   <div class="wrap">
     <div class="portfolio__head">
       <div>
-        <h2 class="portfolio__title">{{ site.portfolio.title }}</h2>
-        {% if site.portfolio.subtitle %}<p class="portfolio__subtitle">{{ site.portfolio.subtitle }}</p>{% endif %}
+        <h2 class="portfolio__title">{{ s.portfolio.title }}</h2>
+        {% if s.portfolio.subtitle %}<p class="portfolio__subtitle">{{ s.portfolio.subtitle }}</p>{% endif %}
       </div>
-      {% if site.portfolio.see_all_url %}
-        <a class="button button--ghost" href="{{ site.portfolio.see_all_url | relative_url }}">{{ site.portfolio.see_all_text }}</a>
+      {% if s.portfolio.see_all_url %}
+        <a class="button button--ghost" href="{{ s.portfolio.see_all_url | relative_url }}">{{ s.portfolio.see_all_text }}</a>
       {% endif %}
     </div>
 
     <div class="portfolio__grid">
-      {% assign home_projects = site.projects | sort: 'date' | reverse %}
-      {% if site.portfolio.count_on_home %}
-        {% assign home_projects = home_projects | slice: 0, site.portfolio.count_on_home %}
+      {% assign home_projects = site.projects | where_exp: "project", "s.categories contains project.category" | sort: 'date' | reverse %}
+      {% if s.portfolio.count_on_home %}
+        {% assign home_projects = home_projects | slice: 0, s.portfolio.count_on_home %}
       {% endif %}
       {% for project in home_projects %}
         {% include project-card.html project=project %}
@@ -68,17 +69,18 @@ layout: default
   </div>
 </section>
 
-{% if site.posts.size > 0 %}
+{% assign side_posts = site.posts | where_exp: "post", "s.categories contains post.category" %}
+{% if side_posts.size > 0 %}
 <section class="blog-preview">
   <div class="wrap">
     <div class="blog-preview__head">
-      <h2 class="blog-preview__title">{{ site.blog_preview.title }}</h2>
-      {% if site.blog_preview.see_all_url %}
-        <a class="button button--ghost" href="{{ site.blog_preview.see_all_url | relative_url }}">{{ site.blog_preview.see_all_text }}</a>
+      <h2 class="blog-preview__title">{{ s.blog_preview.title }}</h2>
+      {% if s.blog_preview.see_all_url %}
+        <a class="button button--ghost" href="{{ s.blog_preview.see_all_url | relative_url }}">{{ s.blog_preview.see_all_text }}</a>
       {% endif %}
     </div>
     <ul class="post-list">
-      {% assign recent_posts = site.posts | slice: 0, site.blog_preview.count %}
+      {% assign recent_posts = side_posts | slice: 0, s.blog_preview.count %}
       {% for post in recent_posts %}
         <li class="post-list__item">
           <a href="{{ post.url | relative_url }}">

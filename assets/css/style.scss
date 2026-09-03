@@ -6,9 +6,17 @@
 :root {
   --yellow: #e7e560;
   --yellow-deep: #d9d64a;
+  --blue: #6c7ce8;
+  --blue-deep: #5566d6;
   --navy: #253449;
   --navy-light: #3d5573;
   --cream: #efebd9;
+  --lavender: #e7eafb;
+  /* Par défaut (côté pro) : bleu. Le côté perso (body.theme-perso,
+     plus bas) inverse vers le jaune. */
+  --accent: var(--blue);
+  --accent-deep: var(--blue-deep);
+  --section-bg: var(--lavender);
   --paper: #faf9f4;
   --white: #ffffff;
   --ink: #223047;
@@ -75,7 +83,7 @@ button:focus-visible {
    Nav
    ========================================================== */
 .site-nav {
-  background: var(--yellow);
+  background: var(--accent);
   position: relative;
   z-index: 10;
 }
@@ -95,6 +103,7 @@ button:focus-visible {
 }
 .site-nav__links {
   display: flex;
+  align-items: center;
   gap: 28px;
   font-weight: 600;
   font-size: 0.95rem;
@@ -106,6 +115,7 @@ button:focus-visible {
   transition: border-color 0.15s ease;
 }
 .site-nav__links a:hover { border-color: var(--navy); }
+.site-nav__links a.nav-flip:hover { border-color: transparent; }
 
 .site-nav__toggle {
   display: none;
@@ -129,7 +139,7 @@ button:focus-visible {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--yellow);
+    background: var(--accent);
     flex-direction: column;
     gap: 0;
     padding: 0 32px;
@@ -145,7 +155,7 @@ button:focus-visible {
 /* ==========================================================
    Hero
    ========================================================== */
-.hero { background: var(--yellow); }
+.hero { background: var(--accent); }
 .hero__inner {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -260,7 +270,7 @@ button:focus-visible {
 /* ==========================================================
    Portfolio
    ========================================================== */
-.portfolio { background: var(--cream); padding: 90px 0 100px; }
+.portfolio { background: var(--section-bg); padding: 90px 0 100px; }
 .portfolio__head {
   display: flex;
   justify-content: space-between;
@@ -300,10 +310,10 @@ button:focus-visible {
   aspect-ratio: 4/3;
   background-size: cover;
   background-position: center;
-  background-color: var(--yellow);
+  background-color: var(--accent);
 }
 .project-card__media--placeholder {
-  background: linear-gradient(135deg, var(--yellow), var(--cream));
+  background: linear-gradient(135deg, var(--accent), var(--section-bg));
 }
 .project-card__body { padding: 20px 22px 24px; }
 .project-card__category {
@@ -336,7 +346,7 @@ button:focus-visible {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--navy);
-  background: var(--cream);
+  background: var(--section-bg);
   padding: 4px 10px;
   border-radius: 999px;
 }
@@ -406,7 +416,7 @@ button:focus-visible {
 /* Article/projet + table des matières flottante.
    Le contenu garde exactement le même centrage que les pages
    "wrap wrap--narrow" (À propos, Blog) : 720px, centré sur la page
-   entière. Le sommaire ne modifie jamais ce centrage — il flotte
+   entière. Le sommaire ne modifie jamais ce centrage, il flotte
    dans la marge à droite sur grand écran, ou se place au-dessus du
    texte en bloc classique sur écran plus étroit. */
 .post-layout {
@@ -497,7 +507,7 @@ button:focus-visible {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--navy);
-  background: var(--cream);
+  background: var(--section-bg);
   padding: 4px 10px;
   border-radius: 999px;
 }
@@ -525,7 +535,7 @@ button:focus-visible {
   border-radius: var(--radius);
   background-size: cover;
   background-position: center;
-  background-color: var(--cream);
+  background-color: var(--section-bg);
 }
 .post__content { margin-top: 32px; font-size: 1.02rem; }
 .post__content p { margin: 0 0 1.2em; }
@@ -553,7 +563,7 @@ button:focus-visible {
   padding: 12px 18px;
   border-top: 1px solid rgba(37,52,73,0.12);
 }
-.post__content tbody tr:nth-child(even) { background: var(--cream); }
+.post__content tbody tr:nth-child(even) { background: var(--section-bg); }
 .post__content tbody tr:hover { background: rgba(37,52,73,0.06); }
 
 /* Sur petit écran, on autorise un défilement horizontal plutôt que
@@ -612,4 +622,65 @@ button:focus-visible {
 .social-button:hover {
   background: var(--navy-light);
   transform: translateY(-2px);
+}
+
+/* ==========================================================
+   Thème "perso" : palette bleue, complémentaire du jaune du
+   côté pro. Appliqué via une classe sur <body>, elle seule
+   suffit à retexturer tout le site puisque le reste du CSS
+   n'utilise plus que les variables --accent / --accent-deep /
+   --section-bg, jamais --yellow ou --cream directement.
+   ========================================================== */
+body.theme-perso {
+  --accent: var(--yellow);
+  --accent-deep: var(--yellow-deep);
+  --section-bg: var(--cream);
+}
+
+/* ==========================================================
+   Onglet bascule pro / perso dans la navigation.
+   Un lien classique, avec un effet de bascule verticale du texte
+   au survol : le libellé glisse vers le haut pour révéler une
+   copie du texte teintée de la couleur du côté vers lequel on va.
+   ========================================================== */
+.nav-flip {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 1.3em;
+  vertical-align: bottom;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+}
+.nav-flip__inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.nav-flip:hover .nav-flip__inner,
+.nav-flip.nav-flip--auto .nav-flip__inner {
+  transform: translateY(-1.3em);
+}
+.nav-flip__line {
+  display: block;
+  line-height: 1.3em;
+  height: 1.3em;
+}
+.nav-flip__line,
+.nav-flip__line--alt {
+  color: var(--nav-flip-hint, var(--navy));
+}
+.nav-flip__line--alt { font-weight: 700; }
+
+/* Couleur du lien, indiquant l'univers vers lequel on bascule :
+   le pro pointe vers le bleu, le perso pointe vers le jaune
+   (assombri pour rester lisible sur fond clair). */
+.nav-flip--to-perso { --nav-flip-hint: #e7e560; }
+.nav-flip--to-pro { --nav-flip-hint: var(--blue-deep); }
+
+@media (max-width: 640px) {
+  .nav-flip { height: auto; overflow: visible; }
+  .nav-flip__inner { transform: none !important; }
+  .nav-flip__line--alt { display: none; }
 }

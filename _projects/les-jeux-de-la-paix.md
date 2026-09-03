@@ -1,4 +1,5 @@
 ---
+side: "perso"
 title: "Les Mémoires de l'Arcaniste"
 role: "Maître de jeu"
 category: "JDR"
@@ -10,7 +11,7 @@ tags: [JDR, Narrative Design, Lore, Worldbuilding]
 image: "assets/images/chill_wiz.png"
 ---
 
-Je consacre une partie de mon temps libre à "inventer des mondes dans lesquels des gens prennent de très mauvaises décisions". Et s'il y a bien un projet de Jeu de Rôle qui illustre parfaitement cette idée, c'est une mini-campagne se déroulant dans la cité de Concordia, une cité fictive où la paix entre les peuples est instaurée de force par une entité magique nommé **le Juge**.
+Je consacre une partie de mon temps libre à "inventer des mondes dans lesquels des gens prennent de très mauvaises décisions". Et s'il y a bien un projet de Jeu de Rôle qui illustre parfaitement cette idée, c'est une mini-campagne se déroulant dans la cité de Concordia, une cité fictive où la paix entre les peuples est instaurée de force par une entité magique nommée **le Juge**.
 
 Sur le papier, côté joueur, le postulat de base est assez classique pour du JDR : 3 à 5 sessions centrées sur un grand tournoi inter-espèces appelé les "Jeux de la Paix". Les joueurs enchaînent des épreuves sportives brutales façon *Bloodbowl*, des duels tactiques, et croisent la route de factions aux motivations très variées. Un excellent prétexte pour jeter des dés et se mettre sur la tronche. Mais il y a un élément précis de ce projet dont je suis particulièrement fier : la révélation finale. Et cette révélation prend la forme d'un document *in-game* que je remets aux joueurs : un document intitulé ***Ritus ad Ordinem et Pacem***, ou plus secrètement, les *Mémoires d'un Arcaniste du Haut Conseil, Déserteur*.
 
@@ -38,7 +39,7 @@ Ce qui me plaît le plus dans ce document, c'est sa conclusion. L'auteur expliqu
 
 ### Pourquoi ça marche à la table ?
 
-Donner ce document aux joueurs à la fin de l'aventure, ça fait son petit effet. Soudainement, toute la mythologie oubliée, les origines de l'univers, les intrigues politiques de la ville, les sabotages et l'amnésie selective générale de la population s'expliquent précisément. Le tournoi se transforme alors en un dilemme moral. Les joueurs réalisent que le nexus est en train de mourir (s'ils ne l'avaient pas déjà compris), que le Gardien actuel souffre le martyre en silence, et qu'ils ont désormais le destin de millions de vies entre leurs mains. C'est à ce moment précis que je m'assieds, que je les regarde débattre, et que je me prépare à les voir prendre les décisions les plus difficiles de leur vie d'aventurier.
+Donner ce document aux joueurs à la fin de l'aventure, ça fait son petit effet. Soudainement, toute la mythologie oubliée, les origines de l'univers, les intrigues politiques de la ville, les sabotages et l'amnésie sélective générale de la population s'expliquent précisément. Le tournoi se transforme alors en un dilemme moral. Les joueurs réalisent que le nexus est en train de mourir (s'ils ne l'avaient pas déjà compris), que le Gardien actuel souffre le martyre en silence, et qu'ils ont désormais le destin de millions de vies entre leurs mains. C'est à ce moment précis que je m'assieds, que je les regarde débattre, et que je me prépare à les voir prendre les décisions les plus difficiles de leur vie d'aventurier.
 
 ### C'est ici
 

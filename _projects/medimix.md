@@ -7,7 +7,7 @@ tags: [3D, AR, VR, R&D, Cours]
 image: assets/images/projects/medimix/models.png
 ---
 
-En 2024, dans le cadre de mon Projet de Fin d’Études au LaBRI, à l'Université de Bordeaux, j’ai travaillé sur une application que nous appelerons MEDIMIX, un projet consacré à l’utilisation de la réalité mixte pour l’exploration de données d’imagerie médicale.
+En 2024, dans le cadre de mon Projet de Fin d’Études au LaBRI, à l'Université de Bordeaux, j’ai travaillé sur une application que nous appellerons MEDIMIX, un projet consacré à l’utilisation de la réalité mixte pour l’exploration de données d’imagerie médicale.
 
 L’idée de départ est assez intuitive : les scanners et IRM permettent de reconstruire des structures anatomiques en 3D, mais ces données sont encore très souvent consultées sur des écrans 2D. On perd alors une partie de l’information spatiale. Nous avons donc cherché à exploiter le Meta Quest 3 pour manipuler directement ces modèles 3D dans l’espace réel, grâce au passthrough du casque.
 
@@ -25,4 +25,4 @@ Source : Non disponible.
 
 ![Visualisation du lien PC -> AR]({{ "assets/images/projects/medimix/link.png" | relative_url }})
 
-*Exemple de visualisation de la projection AR  du logiciel 3D Slicer vers notre solution*
+*Exemple de visualisation de la projection AR du logiciel 3D Slicer vers notre solution*

@@ -1,4 +1,5 @@
 ---
+side: "perso"
 title: "Système 33 : Un moteur de jeu facile, rapide et satisfaisant"
 role: "Maître de jeu"
 category: "JDR"
@@ -10,7 +11,7 @@ tags: [jeu de rôle, SRD, moteur de jeu, game engine]
 image: "/assets/images/skel.png"
 ---
 
-Système 33 est moteur de jeu de rôle est conçu pour être fluide, équilibré et immédiatement accessible, sans calculs complexes. Sa mécanique repose sur une réserve de dés à six faces à lecture directe, où seuls les 5 et les 6 comptent comme des réussites, garantissant des résolutions rapides et lisibles à la table. La combinaison de trois caractéristiques simples et de talents sur mesure offre une personnalisation totale des personnages sans jamais rompre l'équilibre du jeu.
+Système 33 est un moteur de jeu de rôle conçu pour être fluide, équilibré et immédiatement accessible, sans calculs complexes. Sa mécanique repose sur une réserve de dés à six faces à lecture directe, où seuls les 5 et les 6 comptent comme des réussites, garantissant des résolutions rapides et lisibles à la table. La combinaison de trois caractéristiques simples et de talents sur mesure offre une personnalisation totale des personnages sans jamais rompre l'équilibre du jeu.
 
 # 🎲 Mécaniques
 
@@ -50,8 +51,8 @@ Un dé de la réserve doit être d'une couleur distincte : c'est le **Dé du Sor
 
 ## Opposition et Sauvegarde
 
-* **Confrontation :** lors d'une confrontation direct, chaque camp constitue sa réserve normalement, en utilisant la Caractéristique et, si pertinent, un Talent. Les deux camps lancent leur réserve et comparent leur nombre de réussites. L'avantage va à l'attaquant ou au camp logiquement favorisé par la situation. Sinon une relance est effectuée. En combat simplifié, le vainqueur de la confrontation inflige des dégâts équivalent à l'*Impact* de ce qu'il utilise.
-* **Sauvegarde :** pour résister à un danger ou un effet passif, vous effectuez un jet sous la Caractéristique appropriée. Un échec total applique l'intégralité des effets négatifs, tandis que chaque réussite *peut* réduire l'impact, si l'effet si prête, jusqu'à l'annuler si la difficulté est atteinte en niveau de réussite. Pour des sauvegardes infligeant des dégâts, atteindre la moitié (arrondi au supérieur) de la difficulté, en nombre de réussites réduit l'Impact subit de moitié (arrondi au supérieur).
+* **Confrontation :** lors d'une confrontation directe, chaque camp constitue sa réserve normalement, en utilisant la Caractéristique et, si pertinent, un Talent. Les deux camps lancent leur réserve et comparent leur nombre de réussites. L'avantage va à l'attaquant ou au camp logiquement favorisé par la situation. Sinon une relance est effectuée. En combat simplifié, le vainqueur de la confrontation inflige des dégâts équivalents à l'*Impact* de ce qu'il utilise.
+* **Sauvegarde :** pour résister à un danger ou un effet passif, vous effectuez un jet sous la Caractéristique appropriée. Un échec total applique l'intégralité des effets négatifs, tandis que chaque réussite *peut* réduire l'impact, si l'effet s'y prête, jusqu'à l'annuler si la difficulté est atteinte en niveau de réussite. Pour des sauvegardes infligeant des dégâts, atteindre la moitié (arrondi au supérieur) de la difficulté, en nombre de réussites réduit l'Impact subi de moitié (arrondi au supérieur).
 
 ## Le Dilemme et L'Effort
 
@@ -85,7 +86,7 @@ Les trois Caractéristiques (Physique, Esprit, Présence) mesurent les capacité
 
 Les Talents représentent vos compétences pratiques, vos savoirs spécifiques et votre formation martiale. Ils justifient la capacité de votre personnage à agir dans la fiction et ajoutent leur valeur en dés à votre réserve lors d'un test pertinent. Un seul Talent peut s'appliquer par jet de dés.
 
-À la création, vous disposez de **4 points** à répartir pour acquérir ou améliorer des Talents. Un talent à 1 coute 1 points, un talent à 2 en coute 2. La valeur maximale d'un Talent à la création est de 2. 
+À la création, vous disposez de **4 points** à répartir pour acquérir ou améliorer des Talents. Un talent à 1 coûte 1 point, un talent à 2 en coûte 2. La valeur maximale d'un Talent à la création est de 2. 
 
 ### Exemples de Talents
 
@@ -108,8 +109,8 @@ Perdre de la Vigueur illustre l'épuisement, la perte de souffle, un effort déf
 
 Lorsqu'une attaque ou un danger touche un personnage, il perd un nombre de points de Vigueur déterminé par la puissance de la menace ou de l'arme utilisée.
 
-| **Impact** |**Exemples & Effets** |
-| --- | --- | --- |
+| **Impact** | **Exemples & Effets** |
+| --- | --- |
 | **1** | Coup de poing, choc mineur, arme improvisée, égratignure. |
 | **2** | Épée à une main, pistolet, coup tranchant franc, chute de hauteur humaine. |
 | **3** | Hache à deux mains, fusil de précision, attaque dévastatrice. |
