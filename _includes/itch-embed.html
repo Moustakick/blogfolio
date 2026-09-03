@@ -1,0 +1,9 @@
+{% comment %}
+  Petite intégration itch.io : le widget officiel embarqué (aperçu
+  jouable/téléchargeable), généré côté client pour reprendre les
+  couleurs du thème actuel (pro/perso).
+  Usage : {% include itch-embed.html game_id="2327059" url="https://moustakick.itch.io/chrono-criminal" title="Chrono Criminal" %}
+{% endcomment %}
+<div class="itch-embed" data-game-id="{{ include.game_id }}" data-game-title="{{ include.title }}">
+  <a href="{{ include.url }}" target="_blank" rel="noopener">{{ include.title }} sur itch.io</a>
+</div>

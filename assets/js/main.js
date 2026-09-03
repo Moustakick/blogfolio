@@ -47,6 +47,29 @@ document.addEventListener("DOMContentLoaded", function () {
     applyFilter(hasMatchingTab ? initialFilter : "all");
   }
 
+  // ---- Petite intégration itch.io (widget officiel embarqué) ----
+  var itchEmbeds = document.querySelectorAll(".itch-embed[data-game-id]");
+  itchEmbeds.forEach(function (card) {
+    var gameId = card.getAttribute("data-game-id");
+    var title = card.getAttribute("data-game-title") || "Aperçu du jeu sur itch.io";
+    var isPerso = document.body.classList.contains("theme-perso");
+
+    // Couleurs alignées sur les tokens du thème actuel (pro = bleu, perso = jaune).
+    var linkColor = isPerso ? "d9d64a" : "5566d6";
+    var params = "linkback=true&bg_color=faf9f4&fg_color=253449&link_color=" + linkColor + "&border_color=e0ded2";
+
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://itch.io/embed/" + gameId + "?" + params;
+    iframe.width = "552";
+    iframe.height = "167";
+    iframe.frameBorder = "0";
+    iframe.loading = "lazy";
+    iframe.title = title;
+
+    card.innerHTML = "";
+    card.appendChild(iframe);
+  });
+
   // ---- Petites cartes GitHub (stats en direct via l'API) ----
   var githubEmbeds = document.querySelectorAll(".github-embed[data-repo]");
   githubEmbeds.forEach(function (card) {

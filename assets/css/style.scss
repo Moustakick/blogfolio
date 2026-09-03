@@ -727,3 +727,26 @@ body.theme-perso {
   color: var(--ink-soft);
 }
 .github-embed__stat svg { flex-shrink: 0; opacity: 0.7; }
+
+/* ==========================================================
+   Petite intégration itch.io (widget officiel embarqué)
+   ========================================================== */
+.itch-embed {
+  margin: 28px 0;
+  max-width: 552px;
+}
+.itch-embed a {
+  display: inline-block;
+  padding: 14px 18px;
+  border: 1px solid rgba(37,52,73,0.15);
+  border-radius: var(--radius);
+  color: var(--navy);
+  font-weight: 600;
+}
+.itch-embed iframe {
+  width: 100%;
+  max-width: 552px;
+  height: 167px;
+  border: 0;
+  border-radius: var(--radius);
+}
