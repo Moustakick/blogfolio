@@ -600,6 +600,17 @@ button:focus-visible {
   font-size: 0.85rem;
   color: var(--ink-soft);
 }
+.site-footer__right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.site-footer__right a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.site-footer__right a:hover { color: var(--navy); }
 
 .social-buttons {
   display: flex;
